@@ -1,0 +1,8 @@
+- hosts: tesseract
+  gather_facts: true
+  vars: 
+   Consul_Url: 'http://127.0.0.1:8500/v1/'
+   Consul_Token: '9ad6b2d8-5de2-6bd0-221a-0aeddea1c178' #give proper consul token while executing the playbook
+   Consul_Env: 'prod'
+  roles:
+    - consul-registrator

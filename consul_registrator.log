@@ -1,0 +1,19 @@
+2017-09-20 00:07:15,298 p=26103 u=rgodishela |  PLAY RECAP *********************************************************************
+2017-09-20 00:08:07,824 p=26161 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:08:12,792 p=26169 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:08:13,473 p=26169 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:08:56,086 p=26191 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:08:56,797 p=26191 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:09:26,535 p=26210 u=root |  ERROR! Missing target hosts
+2017-09-20 00:09:35,959 p=26218 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:09:36,598 p=26218 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:10:21,994 p=26242 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:10:22,636 p=26242 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:11:25,444 p=26258 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:11:25,448 p=26258 u=root |   [WARNING]: Host file not found: `PWD`/hosts
+
+2017-09-20 00:11:25,450 p=26258 u=root |   [WARNING]: provided hosts list is empty, only localhost is available
+
+2017-09-20 00:11:26,118 p=26258 u=root |  PLAY RECAP *********************************************************************
+2017-09-20 00:12:04,001 p=26272 u=root |  Using /usr/home/rgodishela/consul-registrator/ansible.cfg as config file
+2017-09-20 00:12:04,632 p=26272 u=root |  PLAY RECAP *********************************************************************

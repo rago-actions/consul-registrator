@@ -1,0 +1,17 @@
+- hosts: tesseract
+  gather_facts: true
+  tasks:
+  - name: Stop the consul-registrator service
+    service:
+        name: consul-registrator
+        state: stopped
+        enabled: no
+  - name: Remove consul-registrator directory
+    file: 
+        name: "{{ item }}"
+        state: absent
+    with_items:
+      - /etc/consul-registrator/
+      - /usr/lib/systemd/system/consul-registrator.service
+  - name: reload systemd daemon
+    shell: "systemctl daemon-reload"

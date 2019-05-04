@@ -1,0 +1,54 @@
+---
+# tasks file for consul-registrator
+- name: Install pip
+  yum: 
+    name: python-pip
+    state: present
+
+- name: Install logging and docker python modules
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - logging
+    - docker
+
+- name: create /etc/consul-registrator directory
+  file:
+    path: "{{consul_files_path}}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: copy required files to specific locations
+  copy:
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+    mode: "{{item.perms}}"
+  with_items: 
+    - { src: "ConsulPayload.py", dest: "{{consul_files_path}}", perms: "0755" }
+    - { src: "consul-registrator.py", dest: "{{consul_files_path}}", perms: "0755" }
+    - { src: "consul-registrator.service", dest: "/usr/lib/systemd/system/", perms: "0644" }
+  notify: restart the consul-registrator
+
+- name: upload a config.json template after processing with correct values
+  template:
+    src: config.json.j2
+    dest: "{{consul_files_path}}/config.json"
+    owner: root
+    group: root
+    mode: 0600
+  notify: restart the consul-registrator
+  
+- name: reload systemd daemon
+  shell: "systemctl daemon-reload"
+
+- name: start the consul registrator service
+  service:
+    name: consul-registrator
+    state: started
+    enabled: yes
+    
+- name: include logrotate tasks
+  import_tasks: logrotate.yml
