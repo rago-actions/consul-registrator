@@ -23,7 +23,7 @@ There are three files which are important to do this job.
    - This is service unit file which creates service for start/stop/restart
    
 4. How to apply consul-registrator role to multple nodes in one Go?
-   - Please read [readme.md](http://github.anim.dreamworks.com/PSO/consul-registrator/blob/master/consul-registrator/README.md) of the consul-registrator role.
+   - Please read [readme.md](consul-registrator/blob/master/consul-registrator/README.md) of the consul-registrator role.
    
 5. How to uninstall consul-registrator agent from a single/multiple servers
    - Update the correct hosts list in hosts file
@@ -31,15 +31,3 @@ There are three files which are important to do this job.
    ```sh
    ansible-playbook -i hosts uninstall_CR.yml -l <specific host name>
    ```
-   
-
-6. Jira Tickets
-
-| Jira Ticket | Description | Developed/Reviewd by |
-| ------ | ------ | ------ |
-| PE-529 | Research on register docker container to consul for service catalog | Ramesh |
-| PE-576  | Implement/ Test service registry | Ramesh |
-| PE-615 | Integration Test - Service Registry and Consul Agent | Tim |
-| PE-723 | Deploy consul-registrator agent to Tesseract | Ramesh |
-| PSO-20322 | problem register service into consul | Ramesh |
-| PE-743 | Update consul-registrator agent to register existing services | Ramesh |
