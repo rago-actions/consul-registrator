@@ -1,0 +1,6 @@
+---
+# vars file for consul-registrator
+token: "{{Consul_Token}}" 
+url: "{{Consul_Url}}"
+env: "{{Consul_Env}}"
+

@@ -1,0 +1,17 @@
+---
+#logrotate tasks
+
+- name: copy consul-registrator.conf for logrotation
+  copy:
+    src: consul-registrator.conf
+    dest: /etc/logrotate.d/
+    mode: 0644
+
+- name: Check that /var/log/consul-registrator.log exists
+  stat:
+     path: /var/log/consul-registrator.log
+  register: stat_result
+
+- name: Run the logrotate command to apply the changes
+  shell: logrotate -f /etc/logrotate.d/consul-registrator.conf
+  when: stat_result.stat.exists == true

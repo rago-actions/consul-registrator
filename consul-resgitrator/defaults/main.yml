@@ -1,0 +1,3 @@
+---
+# defaults file for consul-registrator
+consul_files_path: /etc/consul-registrator 
