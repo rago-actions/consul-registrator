@@ -1,7 +1,0 @@
----
-# handlers file for consul-registrator
-- name: restart the consul-registrator
-  service:
-    name: consul-registrator
-    state: restarted
-    enabled: yes
